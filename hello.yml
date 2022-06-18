@@ -2,7 +2,7 @@
 - name: An Ansible Playbook example for AWX
   hosts: "{{ remote_name }}"
   tasks:
-    - name: Check Uptime
+    - name: Check Latency
       ansible.builtin.command: mtr -wz devjugal.com
       register: command_output
 
