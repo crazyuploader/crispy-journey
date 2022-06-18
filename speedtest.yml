@@ -3,7 +3,7 @@
   hosts: "{{ remote_name }}"
   tasks:
     - name: Check Speedtest
-      ansible.builtin.command: docker run crazyuploader/speedtest:latest
+      ansible.builtin.command: docker run crazyuploader/speedtest:latest --server-id 41870
       register: command_output
 
     - debug:
