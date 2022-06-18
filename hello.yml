@@ -2,9 +2,7 @@
 - name: An Ansible Playbook example for AWX
   hosts: demo
   tasks:
-    - name: Check Uptime
-      ansible.builtin.command: uptime
-      regiser: command_output
-      
-    - debug:
-      var: command_output.stdout_lines
+    - name: Display all variables/facts known for a host
+      debug:
+      var: hostvars[inventory_hostname]
+      verbosity: 4
