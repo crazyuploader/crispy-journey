@@ -4,7 +4,7 @@
   tasks:
     - name: Check Uptime
       ansible.builtin.command: uptime
-      regiser: command_output
+      register: command_output
 
     - debug:
       var: command_output.stdout_lines
