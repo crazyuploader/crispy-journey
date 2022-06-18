@@ -1,8 +1,10 @@
 ---
-- name: This is a hello-world example
+- name: An Ansible Playbook example for AWX
   hosts: demo
   tasks:
-    - name: Create a file called 'testfile.txt' in /tmp directory with "Hello World" content
-      copy:
-        content: "Hello World!"
-        dest: /tmp/testfile.txt
+    - name: Check Uptime
+      ansible.builtin.command: uptime
+      regiser: command_output
+      
+    - debug:
+      var: command_output.stdout_lines
