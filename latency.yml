@@ -3,7 +3,7 @@
   hosts: "{{ remote_name }}"
   tasks:
     - name: Check Latency
-      ansible.builtin.command: mtr -wz "{{ hostname }}"
+      ansible.builtin.command: traceroute "{{ hostname }}"
       register: command_output
 
     - debug:
