@@ -1,6 +1,6 @@
 ---
 - name: An Ansible Playbook example for AWX
-  hosts: demo
+  hosts: {{ remote_name }}
   tasks:
     - name: Check Uptime
       ansible.builtin.command: uptime
