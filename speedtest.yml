@@ -3,7 +3,7 @@
   hosts: "{{ remote_name }}"
   tasks:
     - name: Check Speed
-      docker_container:
+      community.docker.docker_container:
         name: speedtest
         image: "crazyuploader/speedtest"
       register: speedtest_output
