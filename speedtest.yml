@@ -2,7 +2,7 @@
 - name: Speedtest for {{ remote_name }}
   hosts: "{{ remote_name }}"
   tasks:
-    - name: Check Speedtest
+    - name: Check Speedtest on "{{ remote_name }}"
       ansible.builtin.command: docker run crazyuploader/speedtest:latest --server-id 41870
       register: command_output
 
