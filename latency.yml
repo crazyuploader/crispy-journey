@@ -3,7 +3,7 @@
   hosts: "{{ remote_name }}"
   tasks:
     - name: Check Latency
-      ansible.builtin.command: traceroute "{{ hostname }}"
+      ansible.builtin.command: ping -c 10 "{{ hostname }}"
       register: command_output
 
     - debug:
