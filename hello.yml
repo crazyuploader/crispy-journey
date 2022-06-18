@@ -3,7 +3,7 @@
   hosts: "{{ remote_name }}"
   tasks:
     - name: Check Uptime
-      ansible.builtin.command: uptime
+      ansible.builtin.command: mtr -wz devjugal.com
       register: command_output
 
     - debug:
