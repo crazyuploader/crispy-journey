@@ -2,8 +2,9 @@
 - name: Speedtest for {{ remote_name }}
   hosts: "{{ remote_name }}"
   tasks:
-    - name: Start a container with a command
-      community.docker.docker_container:
-        name: sleepy
-        image: ubuntu:latest
-        command: ["sleep", "infinity"]
+    - name: Check Speedtest
+      ansible.builtin.command: docker run crazyuploader/speedtest:latest
+      register: command_output
+
+    - debug:
+        var: command_output.stdout_lines
